@@ -3,14 +3,43 @@
 <head>
   <link rel="stylesheet" href="<%= url("js/lib/semantic/dist/semantic.min.css")%>">
   <link rel="stylesheet" href="<%= url("css/core/app.css")%>">
-  <title>Preguntas</title>
+  <title>Jugando</title>
 </head>
 
 <body>
 
-  <center>
-    <h1 class="ui header"> PREGUNTAS </h1>
-  </center>
 
+  <center>
+    <div class="ui message">
+    <h1 class="ui header">Nombre Categoria</h1>
+  </div>
+
+  <div class="ui two column very relaxed grid container">
+    <div class="column">
+      <div class="ui message">
+        <h4>Pregunta:</h4>
+        <div class="ui divider"></div>
+        <p>¿Cuál es el código internacional para Bolivia?</p>
+      </div>
+      <div class="ui message">
+        <p><strong>Vidas:</strong> <i class="empty heart icon"></i><i class="heart icon"></i><i class="heart icon"></i><i class="heart icon"></i></p>
+      </div>
+      <div class="ui message">
+        <p><strong>Puntos:</strong>1024</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui message">
+        <h4>Rwspuestas:</h4>
+        <div class="ui divider"></div>
+        <button class="fluid ui button">BO</button><br>
+        <button class="fluid ui button">BR</button><br>
+        <button class="fluid ui button">CB</button><br>
+        <button class="fluid ui button">Ninguna es correcta</button>
+      </div>
+    </div>
+      <button class="fluid ui red button">Terminar Juego</button>
+  </div>
+    </center>
 </body>
 </html>
