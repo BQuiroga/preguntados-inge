@@ -27,4 +27,20 @@ describe Question do
     ans=q.answers[quest]
     expect(q.evalueAnswer(quest,ans[2])).to eq("correct")
   end
+  it "should return empty score at the begining" do
+    expect(q.score).to eq(0)
+  end
+  it "should add 20 points for correct answer" do
+    quest=q.list[4]
+    ans=q.answers[quest][3]
+    q.reply(quest,ans)
+    expect(q.score).to eq(20)
+  end
+  it "should not modify score if incorrect answer" do
+    q=Question.new
+    quest=q.list[4]
+    ans=q.answers[quest][2]
+    q.reply(quest,ans)
+    expect(q.score).to eq(0)
+  end
 end

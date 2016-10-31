@@ -1,4 +1,17 @@
 class Question
+  @score
+  def initialize
+    @score=0
+  end
+  def score
+    @score
+  end
+  def reply(question,answer)
+    result=evalueAnswer(question,answer)
+    if (result=="correct")
+      @score+=20
+    end
+  end
   def list
     ["¿Cuál es el código internacional para Bolivia?","¿En que año fue la revolucion de la independencia de Bolivia?","¿En que año se jugaron las primeras olimpiadas mundiales?","Como se llama el tigre del cereal Zucaritas?","Cuantos paises hay en el mundo?"]
   end
