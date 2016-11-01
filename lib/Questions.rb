@@ -1,5 +1,5 @@
 class Question
-  @score
+  @score 
   @lives
   def initialize
     @score=0

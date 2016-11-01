@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
   <link rel="stylesheet" href="<%= url("js/lib/semantic/dist/semantic.min.css")%>">
@@ -19,23 +19,30 @@
       <div class="ui message">
         <h4>Pregunta:</h4>
         <div class="ui divider"></div>
-        <p>¿Cuál es el código internacional para Bolivia?</p>
+        <p><%= @questions.list[@random]%></p>
       </div>
       <div class="ui message">
-        <p><strong>Vidas:</strong> <i class="empty heart icon"></i><i class="heart icon"></i><i class="heart icon"></i><i class="heart icon"></i></p>
+        <p><strong>Vidas:</strong> 
+        <% for i in 1..4-@questions.lives %>
+        <i class="empty heart icon"></i>
+        <%end%>
+        <% for i in 1..@questions.lives %>
+        <i class="heart icon"></i>
+        <%end%>
+
+       </p>
       </div>
       <div class="ui message">
-        <p><strong>Puntos:</strong>1024</p>
+        <p><strong>Puntos:</strong><%= @questions.score%></p>
       </div>
     </div>
     <div class="column">
       <div class="ui message">
         <h4>Respuestas:</h4>
         <div class="ui divider"></div>
-        <button class="fluid ui button">BO</button><br>
-        <button class="fluid ui button">BR</button><br>
-        <button class="fluid ui button">CB</button><br>
-        <button class="fluid ui button">Ninguna es correcta</button>
+        <% for i in 0..3 %>
+        <button class="fluid ui button"><%= @questions.answers[@questions.list[@random]][i]%></button><br>
+        <%end%>
       </div>
     </div>
       <a class="fluid ui red button"  href= "/">Terminar Juego</a>
