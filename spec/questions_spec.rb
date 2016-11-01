@@ -43,4 +43,15 @@ describe Question do
     q.reply(quest,ans)
     expect(q.score).to eq(0)
   end
+
+  it "should return four lives to start the game" do
+    q=Question.new
+    expect(q.lives).to eq(4)
+  end
+
+  it "return you lost if life is zero" do
+    q=Question.new
+    expect(q.evaluegame(0)).to eq("You Lose")
+  end
+  
 end

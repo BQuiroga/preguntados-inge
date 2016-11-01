@@ -1,15 +1,33 @@
 class Question
   @score
+  @lives
   def initialize
     @score=0
+    @lives=4
   end
   def score
     @score
   end
+  def lives
+    @lives
+  end
+
+  def evaluegame(lives)
+    if(lives == 0)
+      "You Lose"
+    else
+      "next question"
+    end
+  end
   def reply(question,answer)
-    result=evalueAnswer(question,answer)
-    if (result=="correct")
-      @score+=20
+    r=evaluegame(@lives)
+    if (r != "You Lose")
+      result=evalueAnswer(question,answer)
+      if (result=="correct")
+        @score+=20
+      else
+        @lives-=1
+      end
     end
   end
   def list
