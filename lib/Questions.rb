@@ -1,7 +1,6 @@
 class Question
   @score
   @lives
-  @next
   def initialize
     @score=0
     @lives=4
@@ -29,6 +28,12 @@ class Question
       else
         @lives-=1
       end
+
+      if finished?
+        return true
+      else
+        return false
+      end
     #end
     @score
   end
@@ -55,4 +60,15 @@ class Question
     end
   end
 
+  def finished?
+    if @lives == 0
+      return true
+    else
+      return false
+    end
+  end
+
+  def loseOneLife
+    @lives -= 1
+  end
 end
