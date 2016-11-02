@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" href="<%= url("js/lib/semantic/dist/semantic.min.css")%>">
@@ -13,16 +13,17 @@
     <div class="ui message">
     <h1 class="ui header">Nombre Categoria</h1>
   </div>
-
+<form method="post" action="/reply">
   <div class="ui two column very relaxed grid container">
     <div class="column">
       <div class="ui message">
         <h4>Pregunta:</h4>
         <div class="ui divider"></div>
-        <p><%= @questions.list[@random]%></p>
+        <p><%= @q %></p>
+        <input type="hidden" name="pregunta" value='<%= @q %>'>
       </div>
       <div class="ui message">
-        <p><strong>Vidas:</strong> 
+        <p><strong>Vidas:</strong>
         <% for i in 1..4-@questions.lives %>
         <i class="empty heart icon"></i>
         <%end%>
@@ -41,10 +42,11 @@
         <h4>Respuestas:</h4>
         <div class="ui divider"></div>
         <% for i in 0..3 %>
-        <button class="fluid ui button"><%= @questions.answers[@questions.list[@random]][i]%></button><br>
+        <input type='submit' class="fluid ui button" name="respuesta" value='<%= @questions.answers[@questions.list[@random]][i]%>' ></input><br>
         <%end%>
       </div>
     </div>
+  </form>
       <a class="fluid ui red button"  href= "/">Terminar Juego</a>
   </div>
     </center>

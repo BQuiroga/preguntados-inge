@@ -1,5 +1,5 @@
 class Question
-  @score 
+  @score
   @lives
   def initialize
     @score=0
@@ -20,15 +20,15 @@ class Question
     end
   end
   def reply(question,answer)
-    r=evaluegame(@lives)
-    if (r != "You Lose")
+    #r=evaluegame(@lives)
+    #if (r != "You Lose")
       result=evalueAnswer(question,answer)
       if (result=="correct")
         @score+=20
       else
         @lives-=1
       end
-    end
+    #end
   end
   def list
     ["¿Cuál es el código internacional para Bolivia?","¿En que año fue la revolucion de la independencia de Bolivia?","¿En que año se jugaron las primeras olimpiadas mundiales?","Como se llama el tigre del cereal Zucaritas?","Cuantos paises hay en el mundo?"]
