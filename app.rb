@@ -20,6 +20,16 @@ require_relative 'lib/Questions.rb'
   get '/back' do
     erb :questions
   end
+post '/:reply' do
+  quest=params[:pregunta]
+  resp=params[:respuesta]
+  @questions.reply(quest,resp)
+  #erb :questions
 
+  erb :questions
+end
+
+get '/:question/:answer' do
+  @next = @questions.reply params[:question,:answer]
   erb :questions
 end
