@@ -1,6 +1,7 @@
 class Question
   @score
   @lives
+  @next
   def initialize
     @score=0
     @lives=4

@@ -12,10 +12,11 @@ get '/questions' do
 
   erb :questions
 end
-post '/reply' do
+post '/:reply' do
   quest=params[:pregunta]
   resp=params[:respuesta]
-  l = Question.new
-  l.reply(quest,resp)
+  @questions = Question.new
+  @questions.reply(quest,resp)
   #erb :questions
+  erb :questions
 end
