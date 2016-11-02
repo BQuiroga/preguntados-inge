@@ -7,11 +7,17 @@
 </head>
 
 <body>
+<%if @@questions.lives==0%>
+<script>
+  alert("Sorry You Loose :(!!");
+</script>
+<%end%>
 
+<%if (@@questions.lives!=0)%>
   <center>
     <div class="ui message">
       <h1 class="ui header">Nombre Categoria</h1>
-    </div>  
+    </div>
  <form method="post" action="/reply">
   <div class="ui two column very relaxed grid container">
     <div class="column">
@@ -46,9 +52,10 @@
         <%end%>
       </div>
     </div>
-    </div>
+  </div>
 
-  </form>
+</form>
+<%end%>
       <a class="fluid ui red button"  href= "/">Terminar Juego</a>
 
   </center>

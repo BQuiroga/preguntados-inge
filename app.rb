@@ -1,8 +1,8 @@
 require 'sinatra'
 require_relative 'lib/Questions.rb'
 
-  @@questions=Question.new
   get '/' do
+    @@questions=Question.new
     erb :welcome
   end
   get '/questions' do

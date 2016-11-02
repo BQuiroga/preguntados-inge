@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="<%= url("js/lib/semantic/dist/semantic.min.css")%>">
+<link rel="stylesheet" href="<%= url("css/core/app.css")%>">
 
 <%if(@@questions.evalueAnswer(@quest,@resp)=="correct") %>
   <h2>!!!<%= @@questions.evalueAnswer(@quest,@resp)%>!!!</h2>
