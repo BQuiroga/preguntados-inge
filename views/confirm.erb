@@ -1,9 +1,11 @@
 <link rel="stylesheet" href="<%= url("js/lib/semantic/dist/semantic.min.css")%>">
 <link rel="stylesheet" href="<%= url("css/core/app.css")%>">
 
+<center>
 <%if(@@questions.evalueAnswer(@quest,@resp)=="correct") %>
   <h2>!!!<%= @@questions.evalueAnswer(@quest,@resp)%>!!!</h2>
 <%else%>
   <h2><%= @@questions.evalueAnswer(@quest,@resp)%> :(</h2>
 <%end%>
-<a  href="questions"><button class="button button-positive">Go Back</button></a>
+<a  href="questions" class="ui labeled icon button"><i class="left chevron icon"></i>Volver</a>
+</center>
