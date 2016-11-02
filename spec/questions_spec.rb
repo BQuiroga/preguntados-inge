@@ -53,5 +53,13 @@ describe Question do
     q=Question.new
     expect(q.evaluegame(0)).to eq("You Lose")
   end
-  
+
+  it "lose a life when the answer is wrong" do
+    q = Question.new
+    quest=q.list[4]
+    ans=q.answers[quest][2]
+    q.reply(quest,ans)
+    expect(q.lives).to eq(3)
+  end
+
 end
