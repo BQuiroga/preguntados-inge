@@ -20,7 +20,7 @@ describe Question do
     expect(q.list[2]).to eq("¿En que año se jugaron las primeras olimpiadas mundiales?")
   end
   it "should return the correct answer from third question"do
-    expect(q.correctAnswer[q.list[2]]).to eq(1896)
+    expect(q.correctAnswer[q.list[2]]).to eq("1896")
   end
   it "should return correct if the correc answer for a question" do
     quest=q.list[3]

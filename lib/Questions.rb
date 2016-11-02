@@ -36,15 +36,15 @@ class Question
     ["¿Cuál es el código internacional para Bolivia?","¿En que año fue la revolucion de la independencia de Bolivia?","¿En que año se jugaron las primeras olimpiadas mundiales?","Como se llama el tigre del cereal Zucaritas?","Cuantos paises hay en el mundo?"]
   end
   def answers
-    {list[0]=>["BO", "BR", "CO", "NINGUNA ES CORRECTA"],list[1]=>[1745,1800,1926,1825],list[2]=>[1790,1896,1996,2005],list[3]=>["Pancho","Fercho","Toño","Lucho"],list[4]=>[201,192,142,194]}
+    {list[0]=>["BO", "BR", "CO", "NINGUNA ES CORRECTA"],list[1]=>["1745","1800","1926","1825"],list[2]=>["1790","1896","1996","2005"],list[3]=>["Pancho","Fercho","Toño","Lucho"],list[4]=>["201","192","142","194"]}
   end
   def correctAnswer
     ans =Hash.new
     ans[list[0]]="BO"
-    ans[list[1]]=1825
-    ans[list[2]]=1896
+    ans[list[1]]="1825"
+    ans[list[2]]="1896"
     ans[list[3]]="Toño"
-    ans[list[4]]=194
+    ans[list[4]]="194"
     ans
   end
   def evalueAnswer(question,answer)
