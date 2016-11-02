@@ -1,5 +1,6 @@
 require 'sinatra'
 require_relative 'lib/Questions.rb'
+
   @@questions=Question.new
   get '/' do
     erb :welcome
@@ -19,3 +20,6 @@ require_relative 'lib/Questions.rb'
   get '/back' do
     erb :questions
   end
+
+  erb :questions
+end

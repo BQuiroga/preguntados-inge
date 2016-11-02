@@ -62,4 +62,19 @@ describe Question do
     expect(q.lives).to eq(3)
   end
 
+  it "End the game if you lose" do
+    q=Question.new
+    q.loseOneLife
+    expect(q.finished?).to eq(false)
+  end
+
+  it "Check if game is finished when do a reply" do
+    q=Question.new
+    quest=q.list[4]
+    ans=q.answers[quest][2]
+    expect(q.reply(quest,ans)).to eq(false)
+
+
+  end
+
 end
