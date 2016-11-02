@@ -15,4 +15,7 @@ end
 post '/reply' do
   quest=params[:pregunta]
   resp=params[:respuesta]
+  l = Question.new
+  l.reply(quest,resp)
+  #erb :questions
 end
