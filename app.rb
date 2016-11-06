@@ -1,35 +1,21 @@
 require 'sinatra'
-require_relative 'lib/Questions.rb'
+require_relative 'lib/Game.rb'
 
   get '/' do
-    @@questions=Question.new
+    @@g=Game.new
     erb :welcome
   end
   get '/questions' do
     @random = [*0..4].sample
-    @q=@@questions.list[@random]
+    @q=@@g.questions[@random]
     #@questions.reply(@q,resp)
     erb :questions
   end
   post '/reply' do
     @resp=params[:respuesta]
     @quest=params[:pregunta]
-    @@questions.reply(@quest,@resp)
     erb :confirm
   end
   get '/back' do
     erb :questions
   end
-post '/:reply' do
-  quest=params[:pregunta]
-  resp=params[:respuesta]
-  @questions.reply(quest,resp)
-  #erb :questions
-
-  erb :questions
-end
-
-get '/:question/:answer' do
-  @next = @questions.reply params[:question,:answer]
-  erb :questions
-end

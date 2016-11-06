@@ -7,13 +7,13 @@
 </head>
 
 <body>
-<%if @@questions.lives==0%>
+<%if @@g.lives==0%>
 <script>
   alert("Sorry You Loose :(!!");
 </script>
 <%end%>
 
-<%if (@@questions.lives!=0)%>
+<%if (@@g.lives!=0)%>
   <center>
     <div class="ui message">
       <h1 class="ui header">Nombre Categoria</h1>
@@ -29,16 +29,16 @@
       </div>
       <div class="ui message">
         <p><strong>Vidas:</strong>
-          <% for i in 1..4-@@questions.lives %>
+          <% for i in 1..4-@@g.lives %>
           <i class="empty heart icon"></i>
           <%end%>
-          <% for i in 1..@@questions.lives %>
+          <% for i in 1..@@g.lives %>
           <i class="heart icon"></i>
           <%end%>
        </p>
       </div>
         <div class="ui message">
-          <p><strong>Puntos:</strong><%= @@questions.score%></p>
+          <p><strong>Puntos:</strong><%= @@g.score%></p>
         </div>
     </div>
     <div class="column">
@@ -47,7 +47,7 @@
         <div class="ui divider"></div>
           <% for i in 0..3 %>
         <input type='submit' class="fluid ui button" name="respuesta"
-          value='<%= @@questions.answers[@@questions.list[@random]][i]%>'>
+          value='<%= @@g.answers[@@g.questions[@random]][i]%>'>
         </input><br>
         <%end%>
       </div>

@@ -37,13 +37,20 @@ class Game
   def correctAnswer(question)
     @questions.correctAnswer[question]
   end
+  def response(answer)
+    if answer
+      "!!!correct!!!"
+    else
+      "incorrect :( "
+    end
+  end
   def evalueAnswer(question,answer)
     if(answer==correctAnswer(question))
       increaseScore
-      "correct"
+      true
     else
       loseOneLife
-      "incorrect"
+      false
     end
   end
   def finished?
