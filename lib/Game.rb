@@ -1,13 +1,9 @@
 require_relative 'Questions'
 class Game
-  @score
-  @lives
-  @questions
-  @answers
   def initialize
     @score=0
     @lives=4
-    @questions=Question.new
+    @questions=Questions.new
   end
   def score
     @score
@@ -22,7 +18,7 @@ class Game
     @questions.answers
   end
   def posibleAnswers(question)
-    answers[question]
+    @questions.posibleAnswers(question)
   end
   def evaluegame
     if finished?
@@ -35,7 +31,7 @@ class Game
     evalueAnswer(question,answer)
   end
   def correctAnswer(question)
-    @questions.correctAnswer[question]
+    @questions.correctAnswerFrom(question)
   end
   def response(answer)
     if answer

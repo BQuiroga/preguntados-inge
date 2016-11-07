@@ -1,4 +1,4 @@
-class Question
+class Questions
   def initialize
     @questions=["¿Cuál es el código internacional para Bolivia?",
                 "¿En que año fue la revolucion de la independencia de Bolivia?",
@@ -20,7 +20,7 @@ class Question
   def posibleAnswers(question)
     @answers[question]
   end
-  def correctAnswer
+  def correctAnswers
     ans =Hash.new
     ans[questions[0]]="BO"
     ans[questions[1]]="1825"
@@ -28,6 +28,9 @@ class Question
     ans[questions[3]]="Toño"
     ans[questions[4]]="194"
     ans
+  end
+  def correctAnswerFrom(question)
+    correctAnswers[question]
   end
 
 end
