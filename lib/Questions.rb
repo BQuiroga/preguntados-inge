@@ -1,36 +1,35 @@
+require_relative 'Question'
 class Questions
-  def initialize
-    @questions=["¿Cuál es el código internacional para Bolivia?",
-                "¿En que año fue la revolucion de la independencia de Bolivia?",
-                "¿En que año se jugaron las primeras olimpiadas mundiales?",
-                "Como se llama el tigre del cereal Zucaritas?",
-                "Cuantos paises hay en el mundo?"]
-     @answers={questions[0]=>["BO", "BR", "CO", "NINGUNA ES CORRECTA"],
-               questions[1]=>["1745","1800","1926","1825"],
-               questions[2]=>["1790","1896","1996","2005"],
-               questions[3]=>["Pancho","Fercho","Toño","Lucho"],
-               questions[4]=>["201","192","142","194"]}
+  def initialize(n)
+    @name = n
+    @questions = Array.new(3) {Question.new("",[],"")}
   end
-  def questions
+  def name
+    @name
+  end
+  def question
     @questions
   end
-  def answers
-    @answers
+  def correctAnswer(quest)
+    for i in(0..2)
+      if(@questions[i].question == quest)
+        return @questions[i].correctAnswer
+      end
+    end
   end
-  def posibleAnswers(question)
-    @answers[question]
+  def posibleAnswers(quest)
+    for i in(0..2)
+      if(@questions[i].question == quest)
+        return @questions[i].answers
+      end
+    end
   end
-  def correctAnswers
-    ans =Hash.new
-    ans[questions[0]]="BO"
-    ans[questions[1]]="1825"
-    ans[questions[2]]="1896"
-    ans[questions[3]]="Toño"
-    ans[questions[4]]="194"
-    ans
+  def data(q,a,c,i)
+    @questions[i].setQuestion(q)
+    @questions[i].setAnswers(a)
+    @questions[i].setAnswer(c)
   end
-  def correctAnswerFrom(question)
-    correctAnswers[question]
+  def getQuestion(i)
+    @questions[i].question
   end
-
 end

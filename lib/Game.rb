@@ -1,25 +1,30 @@
-require_relative 'Questions'
+require_relative 'Bank'
 class Game
   def initialize
     @score=0
     @lives=4
-    @questions=Questions.new
+    @bank = Bank.new
+    @bank.initQuestions
   end
+
   def score
     @score
   end
+
   def lives
     @lives
   end
-  def questions
-    @questions.questions
+
+  def bank
+    @bank
   end
-  def answers
-    @questions.answers
+
+  def posibleAnswers(category, question)
+    if(category == "Deportes")
+      @bank.sportsAnswers(question)
+    end
   end
-  def posibleAnswers(question)
-    @questions.posibleAnswers(question)
-  end
+
   def evaluegame
     if finished?
       "You Lose"
@@ -27,12 +32,17 @@ class Game
       "next question"
     end
   end
-  def reply(question,answer)
-    evalueAnswer(question,answer)
+
+  def reply(category,question,answer)
+    evalueAnswer(category,question,answer)
   end
-  def correctAnswer(question)
-    @questions.correctAnswerFrom(question)
+
+  def correctAnswer(category, question)
+    if(category == "Deportes")
+      @bank.sportsCorrectAnswer(question)
+    end
   end
+
   def response(answer)
     if answer
       "!!!correct!!!"
@@ -40,8 +50,9 @@ class Game
       "incorrect :( "
     end
   end
-  def evalueAnswer(question,answer)
-    if(answer==correctAnswer(question))
+
+  def evalueAnswer(category, question,answer)
+    if(answer==correctAnswer(category,question))
       increaseScore
       true
     else
