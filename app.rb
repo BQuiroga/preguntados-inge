@@ -19,3 +19,7 @@ require_relative 'lib/Game.rb'
   get '/back' do
     erb :questions
   end
+
+  get '/categories' do
+  erb :categories
+end

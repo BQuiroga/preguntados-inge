@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="<%= url("js/lib/semantic/dist/semantic.min.css")%>">
+    <link rel="stylesheet" href="<%= url("css/core/app.css")%>">
+    <meta charset="utf-8">
+    <title>categories</title>
+  </head>
+  <body>
+    <center class="ui container">
+    <h1>Categorias</h1>
+
+
+<div class="ui message">
+
+<div class="ui five doubling cards">
+
+  <div class="orange card">
+        <img class="ui image" src="http://www.respuestaspreguntados.org/wp-content/uploads/2014/04/deporte.png" width="110" height="150"/>
+      <div class="content">
+        <form class="ui form" method="get" action="/questions">
+        <button class="ui orange button" type="submit">Deportes</button>
+        </form>
+      </div>
+  </div>
+
+  <div class="teal card">
+        <img class="ui image" src="http://www.respuestaspreguntados.org/wp-content/uploads/2014/04/Ciencia.png" width="100" height="150"/>
+      <div class="content">
+        <form class="ui form" method="get" action="/questions">
+        <button class="ui teal button" type="submit">Ciencia</button>
+        </form>
+      </div>
+  </div>
+
+  <div class="yellow card">
+        <img class="ui image" src="http://www.respuestaspreguntados.org/wp-content/uploads/2014/04/historia.png" width="130" height="150"/>
+      <div class="content">
+        <form class="ui form" method="get" action="/questions">
+        <button class="ui yellow button" type="submit">Historia</button>
+        </form>
+      </div>
+  </div>
+
+  <div class="red card">
+        <img class="ui image" src="http://www.respuestaspreguntados.org/wp-content/uploads/2014/04/Arte.png " width="110" height="150"/>
+      <div class="content">
+        <form class="ui form" method="get" action="/questions">
+        <button class="ui red button" type="submit">Arte</button>
+        </form>
+      </div>
+  </div>
+
+  <div class="blue card">
+        <img class="ui image" src="http://www.respuestaspreguntados.org/wp-content/uploads/2014/04/GEo.png" width="150" height="150"/>
+      <div class="content">
+        <form class="ui form" method="get" action="/questions">
+        <button class="ui blue button" type="submit">Geografia</button>
+        </form>
+      </div>
+  </div>
+
+  </div>
+  <br>
+
+  <div class="ui message">
+  <div class="ui message">
+    <p><strong>Jugador:</strong>player1</p>
+  </div>
+  <div class="ui message">
+    <p><strong>Vidas:</strong>
+      <% for i in 1..4-@@g.lives %>
+      <i class="empty heart icon"></i>
+      <%end%>
+      <% for i in 1..@@g.lives %>
+      <i class="heart icon"></i>
+      <%end%>
+   </p>
+  </div>
+    <div class="ui message">
+      <p><strong>Puntos:</strong><%= @@g.score%></p>
+    </div>
+  </div>
+  <br>
+  <a class="fluid ui red button"  href= "/">Terminar Juego</a>
+</div>
+  </center>
+  </body>
+</html>
