@@ -34,6 +34,29 @@ require_relative 'lib/Game.rb'
     erb :science
   end
 
+  get '/history' do
+    @random = [*0..2].sample
+    @c = "Historia"
+    @q = @@g.bank.getQuestionHistory(@random)
+    @a = @@g.posibleAnswers(@c, @q)
+    erb :history
+  end
+
+  get '/art' do
+    @random = [*0..2].sample
+    @c = "Arte"
+    @q = @@g.bank.getQuestionArt(@random)
+    @a = @@g.posibleAnswers(@c, @q)
+    erb :art
+  end
+
+  get '/geography' do
+    @random = [*0..2].sample
+    @c = "Geografía"
+    @q = @@g.bank.getQuestionGeography(@random)
+    @a = @@g.posibleAnswers(@c, @q)
+    erb :geography
+  end
 
   post '/reply' do
     @cat=params[:categoria]
