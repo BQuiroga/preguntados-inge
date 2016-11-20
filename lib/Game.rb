@@ -1,6 +1,7 @@
 require_relative 'Bank'
 class Game
   def initialize
+    @initialCategoryQuestions=2
     @score=0
     @lives=4
     @bank = Bank.new
@@ -35,14 +36,17 @@ class Game
   end
 
   def reply(category,question,answer)
+    @initialCategoryQuestions-=1
     evalueAnswer(category,question,answer)
   end
-
+  def initialCategoryQuestions
+    @initialCategoryQuestions
+  end
   def correctAnswer(category, question)
     if(category == "Deportes")
       @bank.sportsCorrectAnswer(question)
     end
-  
+
   end
 
   def response(answer)

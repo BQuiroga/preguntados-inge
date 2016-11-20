@@ -11,7 +11,15 @@ describe Game do
   it "should return four lives to start the game" do
     expect(@g.lives).to eq(4)
   end
-
+  it "should let respond two questions at the same category starting the game" do
+    expect(@g.initialCategoryQuestions).to eq(2)
+  end
+  it "should change category when player responds two questions" do
+    answer="incorrect answer for all"
+    @g.reply("Deportes","¿Cuántos jugadores componen un equipo de rugby?", answer)
+    @g.reply("Deportes","¿Quién ganó el mundial de fútbol del año 2002?", answer)
+    expect(@g.initialCategoryQuestions).to eq(0)
+  end
   it "should add 20 points for correct answer" do
     answer = @g.correctAnswer("Deportes","¿Cuántos jugadores componen un equipo de rugby?")
     @g.reply("Deportes","¿Cuántos jugadores componen un equipo de rugby?", answer)

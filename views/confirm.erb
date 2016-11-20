@@ -2,6 +2,10 @@
 <link rel="stylesheet" href="<%= url("css/core/app.css")%>">
 
 <center>
-  <h2><%= @@g.response(@@g.evalueAnswer("Deportes",@quest,@resp))%></h2>
+  <h2><%= @@g.reply("Deportes",@quest,@resp)%></h2>
+  <%if (@@g.initialCategoryQuestions<=0) %>
   <a  href="categories" class="ui labeled icon button"><i class="left chevron icon"></i>Volver</a>
+  <%else%>
+  <a  href="sports" class="ui labeled icon button"><i class="left chevron icon"></i>Volver</a>
+  <%end%>
 </center>

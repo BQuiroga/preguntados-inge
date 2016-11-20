@@ -9,12 +9,11 @@
   <body>
     <center class="ui container">
     <h1>Categorias</h1>
-
 <%if @@g.lives==0%>
   <script>
     alert("Sorry You Loose :(!!");
   </script>
-<%end%>
+<%else%>
 
 <div class="ui message">
 
@@ -87,6 +86,7 @@
     </div>
   </div>
   <br>
+  <%end%>
   <a class="fluid ui red button"  href= "/">Terminar Juego</a>
 </div>
   </center>
