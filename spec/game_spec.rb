@@ -49,4 +49,8 @@ describe Game do
     @g.reply("Deportes","¿Cuántos jugadores componen un equipo de rugby?", answer)
     expect(@g.evaluegame).to eq("You Lose")
   end
+
+  it "should return the default nickname" do
+    expect(@g.nickname).to eq("no_name")
+  end
 end

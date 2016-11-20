@@ -4,6 +4,7 @@ class Game
     @initialCategoryQuestions=2
     @score=0
     @lives=4
+    @nickname="no_name"
     @bank = Bank.new
     @bank.initQuestions
   end
@@ -25,6 +26,10 @@ class Game
       @bank.sportsAnswers(question)
     end
 
+  end
+
+  def nickname
+    @nickname
   end
 
   def evaluegame
