@@ -25,13 +25,21 @@ class Game
       @bank.sportsAnswers(question)
     end
 
+    if(category == "Entretenimiento")
+      @bank.entertainmentAnswers(question)
+    end
+
+    if(category == "Ciencia")
+      @bank.scienceAnswers(question)
+    end
+
   end
 
   def evaluegame
     if finished?
       "You Lose"
     else
-      "next question"
+      "Next Question"
     end
   end
 
@@ -47,23 +55,23 @@ class Game
       @bank.sportsCorrectAnswer(question)
     end
 
-  end
-
-  def response(answer)
-    if answer
-      "!!!correct!!!"
-    else
-      "incorrect :( "
+    if(category == "Entretenimiento")
+      @bank.entertainmentCorrectAnswer(question)
     end
+
+    if(category == "Ciencia")
+      @bank.scienceCorrectAnswer(question)
+    end
+
   end
 
   def evalueAnswer(category, question, answer)
     if(answer==correctAnswer(category,question))
       increaseScore
-      true
+      "Correcto"
     else
       loseOneLife
-      false
+      "Incorrecto"
     end
   end
   def finished?

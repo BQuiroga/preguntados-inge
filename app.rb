@@ -18,10 +18,26 @@ require_relative 'lib/Game.rb'
     erb :sports
   end
 
-  post '/reply_sports' do
+  get '/entertainment' do
+    @random = [*0..2].sample
+    @c = "Entretenimiento"
+    @q = @@g.bank.getQuestionEntertaiment(@random)
+    @a = @@g.posibleAnswers(@c, @q)
+    erb :entertainment
+  end
+
+  get '/science' do
+    @random = [*0..2].sample
+    @c = "Ciencia"
+    @q = @@g.bank.getQuestionScience(@random)
+    @a = @@g.posibleAnswers(@c, @q)
+    erb :science
+  end
+
+
+  post '/reply' do
+    @cat=params[:categoria]
     @resp=params[:respuesta]
     @quest=params[:pregunta]
     erb :confirm
   end
-
-  
