@@ -23,6 +23,7 @@ class Game
     if(category == "Deportes")
       @bank.sportsAnswers(question)
     end
+
   end
 
   def evaluegame
@@ -41,6 +42,7 @@ class Game
     if(category == "Deportes")
       @bank.sportsCorrectAnswer(question)
     end
+  
   end
 
   def response(answer)
@@ -51,7 +53,7 @@ class Game
     end
   end
 
-  def evalueAnswer(category, question,answer)
+  def evalueAnswer(category, question, answer)
     if(answer==correctAnswer(category,question))
       increaseScore
       true

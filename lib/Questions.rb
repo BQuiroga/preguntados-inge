@@ -11,14 +11,14 @@ class Questions
     @questions
   end
   def correctAnswer(quest)
-    for i in(0..2)
+    for i in(0..3)
       if(@questions[i].question == quest)
         return @questions[i].correctAnswer
       end
     end
   end
   def posibleAnswers(quest)
-    for i in(0..2)
+    for i in(0..3)
       if(@questions[i].question == quest)
         return @questions[i].answers
       end
@@ -30,6 +30,6 @@ class Questions
     @questions[i].setAnswer(c)
   end
   def getQuestion(i)
-    @questions[i].question
+    return @questions[i].question
   end
 end

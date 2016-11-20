@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="<%= url("js/lib/semantic/dist/semantic.min.css")%>">
+  <link rel="stylesheet" href="<%= url("css/core/app.css")%>">
+  <title>Jugando</title>
+</head>
+
+<body>
+<%if @@g.lives==0%>
+<script>
+  alert("Sorry You Loose :(!!");
+</script>
+<%end%>
+
+<%if (@@g.lives!=0)%>
+  <center>
+    <div class="ui message">
+      <h1 class="ui header"><%= @c %></h1>
+    </div>
+
+  <form method="post" action="/reply_sports">
+    <div class="ui two column very relaxed grid container">
+      <div class="column">
+        <div class="ui message">
+          <h4>Pregunta:</h4>
+            <div class="ui divider"></div>
+            <p><%= @q %></p>
+            <input type="hidden" name="pregunta" value="<%=@q%>">
+        </div>
+        <div class="ui message">
+          <p><strong>Vidas:</strong>
+            <% for i in 1..4-@@g.lives %>
+            <i class="empty heart icon"></i>
+            <%end%>
+            <% for i in 1..@@g.lives %>
+            <i class="heart icon"></i>
+            <%end%>
+         </p>
+        </div>
+          <div class="ui message">
+            <p><strong>Puntos:</strong><%= @@g.score%></p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="ui message">
+            <h4>Respuestas:</h4>
+              <div class="ui divider"></div>
+                <% for i in 0..3 %>
+                  <input type='submit' class="fluid ui button" name="respuesta"
+                    value="<%= @a[i]%>">
+                    </input><br>
+                <%end%>
+          </div>
+        </div>
+    </div>
+</form>
+<%end%>
+      <a class="fluid ui red button"  href= "/">Terminar Juego</a>
+
+  </center>
+</body>
+</html>

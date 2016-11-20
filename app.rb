@@ -5,17 +5,23 @@ require_relative 'lib/Game.rb'
     @@g=Game.new
     erb :welcome
   end
-  get '/questions' do
-    @random = [*0..4].sample
-    @q=@@g.questions[@random]
-    #@questions.reply(@q,resp)
-    erb :questions
+
+  get '/categories' do
+    erb :categories
   end
-  post '/reply' do
+
+  get '/sports' do
+    @random = [*0..2].sample
+    @c = "Deportes"
+    @q = @@g.bank.getQuestionSport(@random)
+    @a = @@g.posibleAnswers(@c, @q)
+    erb :sports
+  end
+
+  post '/reply_sports' do
     @resp=params[:respuesta]
     @quest=params[:pregunta]
     erb :confirm
   end
-  get '/back' do
-    erb :questions
-  end
+
+  
