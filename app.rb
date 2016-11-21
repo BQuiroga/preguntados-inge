@@ -7,6 +7,8 @@ require_relative 'lib/Game.rb'
   end
 
   get '/categories' do
+    @nickname=params[:nickname]
+    @@g.choseNickname(@nickname)
     erb :categories
   end
 
