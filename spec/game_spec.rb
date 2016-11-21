@@ -53,4 +53,10 @@ describe Game do
   it "should return the default nickname" do
     expect(@g.nickname).to eq("no_name")
   end
+
+  it "should return the nickname chosed by the player" do
+    @g.choseNickname("TheNameChosed")
+    expect(@g.nickname).to eq("TheNameChosed")
+  end
+
 end

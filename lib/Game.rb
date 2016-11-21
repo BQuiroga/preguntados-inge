@@ -80,4 +80,8 @@ class Game
   def loseOneLife
     @lives -= 1
   end
+
+  def choseNickname(name)
+    @nickname = name
+  end
 end
