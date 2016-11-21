@@ -64,5 +64,6 @@ require_relative 'lib/Game.rb'
     @cat=params[:categoria]
     @resp=params[:respuesta]
     @quest=params[:pregunta]
+    @random = [*0..5].sample
     erb :confirm
   end

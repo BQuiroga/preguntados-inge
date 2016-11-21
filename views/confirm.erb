@@ -4,7 +4,7 @@
 <center>
   <h2><%= @@g.reply(@cat,@quest,@resp)%></h2>
   <%if (@@g.initialCategoryQuestions<=0) %>
-  <a  href="categories" class="ui labeled icon button"><i class="left chevron icon"></i>Volver</a>
+  <a  href="<%=@@g.randomViews(@random) %>" class="ui labeled icon button"><i class="left chevron icon"></i>Volver</a>
   <%else%>
     <%if (@cat=="Deportes") %>
       <a  href="sports" class="ui labeled icon button"><i class="left chevron icon"></i>Volver</a>

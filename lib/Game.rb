@@ -8,6 +8,7 @@ class Game
     @nickname="no_name"
     @bank = Bank.new
     @bank.initQuestions
+    @randomViews=["sports","entertainment","history","art","geography","science"]
   end
 
   def score
@@ -21,11 +22,14 @@ class Game
   def bank
     @bank
   end
-  
+
   def nickname
     @nickname
   end
 
+  def randomViews(view)
+    @randomViews[view]
+  end
 
   def posibleAnswers(category, question)
     if(category == "Deportes")
