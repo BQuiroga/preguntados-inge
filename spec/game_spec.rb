@@ -1,4 +1,5 @@
 require 'Game'
+require 'Scores'
 describe Game do
   before(:each) do
     @g=Game.new
@@ -57,6 +58,18 @@ describe Game do
   it "should return the nickname chosed by the player" do
     @g.choseNickname("TheNameChosed")
     expect(@g.nickname).to eq("TheNameChosed")
+  end
+  
+
+  it "should exist records.txt file in public folder" do
+    @g.bestScores.createFile(@g.fileName)
+    expect(File).to exist(@g.fileName)
+  end
+
+  it "should load all records " do
+    records=@g.bestScores.records()
+    expect(records).to eq([["howard 100"], ["dhara 10"]])
+
   end
 
 end

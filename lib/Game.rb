@@ -1,4 +1,5 @@
 require_relative 'Bank'
+require_relative 'Scores'
 class Game
   def initialize
     @nickname
@@ -9,6 +10,10 @@ class Game
     @bank = Bank.new
     @bank.initQuestions
     @randomViews=["sports","entertainment","history","art","geography","science"]
+    @bestScores=Scores.new
+    @fileName = "./public/records.txt"
+    @records
+
   end
 
   def score
@@ -29,6 +34,14 @@ class Game
 
   def randomViews(view)
     @randomViews[view]
+  end
+
+  def bestScores
+    @bestScores
+  end
+  
+  def fileName
+    @fileName
   end
 
   def posibleAnswers(category, question)
