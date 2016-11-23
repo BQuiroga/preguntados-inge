@@ -30,6 +30,9 @@
             <input type="hidden" name="pregunta" value="<%=@q%>">
         </div>
         <div class="ui message">
+          <p><strong>Jugador:</strong><%= @@g.nickname %></p>
+        </div>
+        <div class="ui message">
           <p><strong>Vidas:</strong>
             <% for i in 1..4-@@g.lives %>
             <i class="empty heart icon"></i>
