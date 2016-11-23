@@ -67,3 +67,13 @@ require_relative 'lib/Game.rb'
     @random = [*0..5].sample
     erb :confirm
   end
+
+
+  get '/Top' do
+  erb :Top
+end
+
+
+  get '/Instrucciones' do
+   erb :Instruccions
+end
