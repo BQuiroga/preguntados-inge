@@ -76,6 +76,7 @@ require_relative 'lib/Game.rb'
 
 
   get '/Top' do
+    @records=400
   erb :Top
 end
 

@@ -8,9 +8,6 @@
 
 <body>
 <%if @@g.lives==0%>
-<script>
-  alert("Sorry You Loose :(!!");
-</script>
 <div class="column">
         <div class="ui message">
           <h4>top 5:</h4>
@@ -24,6 +21,10 @@
 </p>
 <% end %>
 </div>
+<script>
+  alert("Sorry You Loose :(!!");
+</script>
+
 <%end%>
 
 <%if (@@g.lives!=0)%>
