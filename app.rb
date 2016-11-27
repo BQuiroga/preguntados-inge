@@ -17,6 +17,7 @@ require_relative 'lib/Game.rb'
     @c = "Deportes"
     @q = @@g.bank.getQuestionSport(@random)
     @a = @@g.posibleAnswers(@c, @q)
+    @records=@@g.bestScores.records()
     erb :sports
   end
 
@@ -25,6 +26,7 @@ require_relative 'lib/Game.rb'
     @c = "Entretenimiento"
     @q = @@g.bank.getQuestionEntertaiment(@random)
     @a = @@g.posibleAnswers(@c, @q)
+    @records=@@g.bestScores.records()
     erb :entertainment
   end
 
@@ -33,6 +35,7 @@ require_relative 'lib/Game.rb'
     @c = "Ciencia"
     @q = @@g.bank.getQuestionScience(@random)
     @a = @@g.posibleAnswers(@c, @q)
+    @records=@@g.bestScores.records()
     erb :science
   end
 
@@ -41,6 +44,7 @@ require_relative 'lib/Game.rb'
     @c = "Historia"
     @q = @@g.bank.getQuestionHistory(@random)
     @a = @@g.posibleAnswers(@c, @q)
+    @records=@@g.bestScores.records()
     erb :history
   end
 
@@ -49,6 +53,7 @@ require_relative 'lib/Game.rb'
     @c = "Arte"
     @q = @@g.bank.getQuestionArt(@random)
     @a = @@g.posibleAnswers(@c, @q)
+    @records=@@g.bestScores.records()
     erb :art
   end
 

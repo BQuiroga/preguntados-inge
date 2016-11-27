@@ -61,6 +61,19 @@
     </div>
 </form>
 <%end%>
+<div class="column">
+        <div class="ui message">
+          <h4>top 5:</h4>
+        
+<% @records.each do |record|%>
+
+<div class="ui divider"></div>
+            <input type="hidden" name="pregunta" value="<%=@q%>"><p>        
+
+<%= record[0].to_s+" Puntos" %>
+</p>
+<% end %>
+</div>
       <a class="fluid ui red button"  href= "/">Terminar Juego</a>
 
   </center>

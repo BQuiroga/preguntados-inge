@@ -12,7 +12,6 @@ class Game
     @randomViews=["sports","entertainment","history","art","geography","science"]
     @bestScores=Scores.new
     @fileName = "./public/records.txt"
-    @records
 
   end
 
