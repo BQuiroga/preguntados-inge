@@ -25,6 +25,7 @@ GEM
     tilt (2.0.5)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
@@ -33,4 +34,8 @@ DEPENDENCIES
   sinatra
 
 BUNDLED WITH
+<<<<<<< Updated upstream
    1.13.6
+=======
+   1.13.5
+>>>>>>> Stashed changes
