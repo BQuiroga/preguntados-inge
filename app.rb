@@ -62,6 +62,7 @@ require_relative 'lib/Game.rb'
     @c = "Geografía"
     @q = @@g.bank.getQuestionGeography(@random)
     @a = @@g.posibleAnswers(@c, @q)
+    @records=@@g.bestScores.records()
     erb :geography
   end
 
