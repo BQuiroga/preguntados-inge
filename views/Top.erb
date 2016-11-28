@@ -35,13 +35,13 @@
         </td>
       </tr>
     <% end %>
-    
+
   </tbody>
 </table>
   </center>
 </div>
 
-     
+
     <%if (@@g.bestScores.getPosition(@@g.nickname) != -1)%>
       <div class="ui message">
       <center class="ui container">
@@ -52,8 +52,11 @@
       </center>
       </div>
     <% end %>
-    
-  <a class="fluid ui yellow button"  href= "/">Volver</a>
+
+    <form action="/" method="get">
+      <input type="hidden" value="<%=@@g.nickname%>" name="nickname">
+      <input type="submit" class="fluid ui yellow button" value="Volver al menu">
+    </form>
 
   </body>
 </html>
