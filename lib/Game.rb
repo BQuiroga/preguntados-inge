@@ -12,7 +12,7 @@ class Game
     @bank.initQuestions
     @randomViews=["sports","entertainment","history","art","geography","science"]
     @bestScores=Scores.new
-    @fileName = "./public/records.txt"
+    @bestScores.fileName("./public/records.txt")
 
   end
 

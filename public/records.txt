@@ -1,2 +1,7 @@
+dhara 120
 howard 100
-dhara 10
+pedro 80
+aldo 60
+mono 50
+luis 40
+vince 15

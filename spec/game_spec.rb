@@ -4,6 +4,15 @@ describe Game do
   before(:each) do
     @g=Game.new
     @g.bank.initQuestions
+    @fileName="./spec/ScoresTest.txt"
+    @g.bestScores.fileName(@fileName)
+    File.open(@fileName, 'w') {|file| file.truncate(0) }
+    records=[]
+    records << {:name => "howard", :points=> 100}
+    records << {:name => "dhara", :points=> 10}
+    File.open(@fileName, "w+") do |f|
+        records.each { |element| f.puts(element[:name]+" "+element[:points].to_s) }
+    end
   end
 
   it "should return empty score at the begining" do
@@ -62,14 +71,21 @@ describe Game do
   
 
   it "should exist records.txt file in public folder" do
-    @g.bestScores.createFile(@g.fileName)
-    expect(File).to exist(@g.fileName)
+    @g.bestScores.createFile()
+    expect(File).to exist(@fileName)
   end
 
-  it "should load all records " do
+  it "should load all records order by points decresent " do
     records=@g.bestScores.records()
-    expect(records).to eq([["howard 100"], ["dhara 10"]])
-
+    expect(records).to eq([{:name=>"howard", :points=>100}, {:name=>"dhara", :points=>10}])
   end
 
+  it "should return the position of a player" do
+    position=@g.bestScores.getPosition("dhara")
+    expect(position).to eq(2)
+  end
+  it "should save the nickname and score of a player" do
+    scoreString =@g.bestScores.saveScore("dhaa",2)
+    expect(scoreString).to eq("dhaa 2")
+  end
 end
