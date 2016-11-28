@@ -8,6 +8,7 @@
 
 <body>
 <%if @@g.lives==0%>
+<% @@g.bestScores.saveScore(@@g.nickname,@@g.score)%>
 <script>
   alert("Sorry You Loose :(!!");
 </script>
@@ -62,7 +63,7 @@
 </form>
 <%end%>
 
-      <a class="fluid ui red button"  href= "/">Terminar Juego</a>
+      <a class="fluid ui yellow button"  href= "/Top">Continuar</a>
 
   </center>
 </body>

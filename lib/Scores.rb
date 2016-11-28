@@ -24,7 +24,11 @@ class Scores
 	end
 	def getPosition(nickname)
 		records=records()
-		records.index {|x| x[:name] == "dhara"}+1
+		if (records.index {|x| x[:name] == nickname} != nil)
+			records.index {|x| x[:name] == nickname}+1
+		else
+			-1
+		end
 	end
 	def saveScore(nickname, score)
 		records=records()

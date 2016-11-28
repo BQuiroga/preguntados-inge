@@ -76,7 +76,8 @@ require_relative 'lib/Game.rb'
 
 
   get '/Top' do
-    @records=400
+    @nickname=params[:nickname]
+    @records=@@g.bestScores.records()
   erb :Top
 end
 

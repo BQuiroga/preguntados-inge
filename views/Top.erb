@@ -22,64 +22,33 @@
     <th>Puntaje</th>
   </tr></thead>
   <tbody>
-    <tr>
-      <td>
-        <h4 class="ui image header">
-          <div class="content">1.- <%= @records %> </div>
-      </h4>
-    </td>
-      <td>
-        160
+    <% @records.first(5).each_with_index do |record,i|%>
+      <tr>
+        <td>
+          <h4 class="ui image header">
+            <div class="content"><%= i+1 %> .- <%= record[:name] %> </div>
+            <% %>
+        </h4>
       </td>
-    </tr>
-    <tr>
-      <td>
-        <h4 class="ui image header">
-          <div class="content">2.- Dani </div>
-      </h4>
-    </td>
-      <td>
-        100
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <h4 class="ui image header">
-          <div class="content">3.- David </div>
-      </h4>
-    </td>
-      <td>
-        80
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <h4 class="ui image header">
-          <div class="content">4- Daniel </div>
-      </h4>
-    </td>
-      <td>
-        60
-      </td>
-    </tr>
-
-
-    <tr>
-      <td>
-        <h4 class="ui image header">
-          <div class="content">5.- Alejando </div>
-      </h4>
-    </td>
-      <td>
-        20
-      </td>
-    </tr>
+        <td>
+          <%= record[:points] %>
+        </td>
+      </tr>
+    <% end %>
+    
   </tbody>
 </table>
   </center>
 </div>
-
+<div class="ui message">
+    <center class="ui container">
+    <h1><%= @@g.bestScores.getPosition(@@g.nickname).to_s+".- "+@@g.nickname+": "+@@g.score.to_s %></h1>
+    <% if (@@g.bestScores.getPosition(@@g.nickname)<6 and @@g.bestScores.getPosition(@@g.nickname)!=-1)%>
+      <h1>Felicidades estas entre los 5 Primeros </h1>
+      
+    <% end %>
+    </center>
+    </div>
   <a class="fluid ui yellow button"  href= "/">Volver</a>
 
   </body>

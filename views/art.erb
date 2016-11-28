@@ -8,19 +8,7 @@
 
 <body>
 <%if @@g.lives==0%>
-<div class="column">
-        <div class="ui message">
-          <h4>top 5:</h4>
-        
-<% @records.each do |record|%>
-
-<div class="ui divider"></div>
-            <input type="hidden" name="pregunta" value="<%=@q%>"><p>        
-
-<%= record[0].to_s+" Puntos" %>
-</p>
-<% end %>
-</div>
+<% @@g.bestScores.saveScore(@@g.nickname,@@g.score)%>
 <script>
   alert("Sorry You Loose :(!!");
 </script>
@@ -76,7 +64,7 @@
 </form>
 <%end%>
 
-      <a class="fluid ui red button"  href= "/">Terminar Juego</a>
+      <a class="fluid ui yellow button"  href= "/Top">Continuar</a>
 
   </center>
 </body>
