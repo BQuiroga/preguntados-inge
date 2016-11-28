@@ -3,3 +3,8 @@ rvm:
   - 2.2
 script:
   - bundle exec rspec spec
+deploy:
+  provider: heroku
+  api_key:
+    secure: 'uCQg/r8vdvEQq7Oa3lBAmjf3R+lhHJIzkIlew/E78xD5FVSwUzdFCNm+ODegX8K/eMyOZXDFxPBY7rHoyEaNvHNPvCVlidlcOh3pJftzRgeHvxYVonzreRUJxhr8YdgmhUEKBt33FyDjoEw0Od99C/j1HnEjk2IFA7V7Y2YkH1wOhnyOucNY/hXDti8ZE6kKXpOXZR5AFoUC4PFdsqOnyYmxLegn68mfmyRnQ/QJHdWzxrI0ado2XkVg7iT0ukhBmuKQsOoJuCQTIV4E0CgisZF5U51lPJmAnmnQKIu8/3VB/c2oVVWfbqRbz4V5ZR18+F9VbMtX5aTHlqlLtS7bLpsFY7gkPc4vUHuE6yPWtvCIBBlwPYtz9k+aM8aAWO2u7ENrsxbkiQ9s9mnkeeHPf4wavQLh14k+JO1N97LgHhwAuzs/Umvqmv2gxXAFF6fUE440KqW1iADGPhT2Gdzz/Uz2q8SwFU6FA3KLxIMaQQayYbV5WgxNJjj1SXLJVTTKn8KPwJzuD0XPJUOHskVQUG5xaWHxg/fZlP9Cl7fvW8QdXZQrZ64C3EKhdX9Q0g26qHFSwGT+ij61fxxAFp8wLoz+AqT1W6WVDD6uVy1FMBP9PBCTQsvu9HymYc18DktX/3ZTB3CT5JriKsd1DsSbbiyxhvc7XJlYHRQGAjs3QHw='
+  app: 'triviapreguntados'
