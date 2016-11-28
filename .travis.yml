@@ -5,6 +5,6 @@ script:
 - bundle exec rspec spec
 deploy:
   provider: heroku
-  api_key:
-    secure: 'JCAQ4doUhCUNDEc0fZo2d6n2MWOb8WkrX1cK3mhYoQFCTnoguudchFLaQNvCj7sDasFPffQh6JGDMG6X/5Z8UCANMu35AWgJK4GwSrlED0N7q7X83DB3Y4op7I4Z/KkjbRqLRVj4VClikTJYYK+HWZSaYOthpzE0/lBK51boWINhh4WpIYezi5jsjkY6LrtzbbRR7aERRkhBmWPHuPd8DymjIRaYIFTQX6ija4PcsfMA201ccPNV+Us06m2noDwPIyVMchyXhoqrAUvARJiinw0xd66nQJwvCdezzU6jCt8jqPbXETbjG2MMsv81eN7wRnhph+egClzW0pxk3rZzuIJ2xQXugSY0c/L1XE7Ncp0NAA01i1bB1zDx7mtWd/q5eWJqJiexbBK4GY6ba605spfxw84tJ6hONNDB0+E1YkcFO+D1PL+etRPy50yD8QKk4RBfzOIiaDLZjlTtszvX4+mhQF+oP0FOrAqtxRQ2FZRFyon0m4pAoLSOgkv0uCy/BeU+TuCAiJqDYZydSfsq26HGW0pAkgl03wXiGNwIWK/HeXHvov8t3opCcam1R4fAR8ofTE3ZM4MQlFV4c8G5MF5vL0SQm7w6YOtKGQIEEDbBWo1gf9bL+MmbjhZPRayMcW1E1tnoxSkWPqkK2ywBPh/0S520fOraw3jzhZrI69E='
-  app: triviapreguntados
+  api_key: '6844301c-cac0-4134-a922-b8dd63431879'
+
+  app: 'triviapreguntados'
