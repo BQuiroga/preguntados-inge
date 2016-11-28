@@ -6,7 +6,8 @@ class Game
     @initialCategoryQuestions=2
     @score=0
     @lives=4
-    @nickname="no_name"
+
+    
     @bank = Bank.new
     @bank.initQuestions
     @randomViews=["sports","entertainment","history","art","geography","science"]
@@ -38,7 +39,7 @@ class Game
   def bestScores
     @bestScores
   end
-  
+
   def fileName
     @fileName
   end
