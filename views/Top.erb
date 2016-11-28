@@ -40,15 +40,19 @@
 </table>
   </center>
 </div>
-<div class="ui message">
-    <center class="ui container">
-    <h1><%= @@g.bestScores.getPosition(@@g.nickname).to_s+".- "+@@g.nickname+": "+@@g.score.to_s %></h1>
-    <% if (@@g.bestScores.getPosition(@@g.nickname)<6 and @@g.bestScores.getPosition(@@g.nickname)!=-1)%>
-      <h1>Felicidades estas entre los 5 Primeros </h1>
-      
+
+     
+    <%if (@@g.bestScores.getPosition(@@g.nickname) != -1)%>
+      <div class="ui message">
+      <center class="ui container">
+        <h1><%= @@g.bestScores.getPosition(@@g.nickname).to_s+".- "+@@g.nickname+": "+@@g.score.to_s %></h1>
+        <% if (@@g.bestScores.getPosition(@@g.nickname)<6 and @@g.bestScores.getPosition(@@g.nickname)!=-1)%>
+          <h1>Felicidades estas entre los 5 Primeros </h1>
+        <% end %>
+      </center>
+      </div>
     <% end %>
-    </center>
-    </div>
+    
   <a class="fluid ui yellow button"  href= "/">Volver</a>
 
   </body>

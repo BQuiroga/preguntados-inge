@@ -1,6 +1,6 @@
 dhara 120
-howard 100
-pedro 80
+howard 320
+pedro 60
 aldo 60
 mono 50
 luis 40
