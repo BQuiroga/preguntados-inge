@@ -3,6 +3,7 @@ require_relative 'lib/Game.rb'
 
   get '/' do
     @@g=Game.new
+    @nickname=params[:nickname];
     erb :welcome
   end
 

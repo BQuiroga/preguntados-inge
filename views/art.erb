@@ -11,11 +11,11 @@
 <div class="column">
         <div class="ui message">
           <h4>top 5:</h4>
-        
+
 <% @records.each do |record|%>
 
 <div class="ui divider"></div>
-            <input type="hidden" name="pregunta" value="<%=@q%>"><p>        
+            <input type="hidden" name="pregunta" value="<%=@q%>"><p>
 
 <%= record[0].to_s+" Puntos" %>
 </p>
@@ -75,9 +75,12 @@
     </div>
 </form>
 <%end%>
-
-      <a class="fluid ui red button"  href= "/">Terminar Juego</a>
-
+<form  action="/" method="get">
+  <div class="ui input focus">
+    <input type="hidden" name="nickname" value="<%= @@g.nickname %>">
+  </div>
+  <input type="submit" class="fluid ui red button" value="Terminar Juego">
+</form>
   </center>
 </body>
 </html>

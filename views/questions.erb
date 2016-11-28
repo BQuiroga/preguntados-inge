@@ -18,10 +18,14 @@
     <div class="ui message">
       <h1 class="ui header"><%=@name%></h1>
     </div>
- 
-<%end%>
-      <a class="fluid ui red button"  href= "/">Terminar Juego</a>
 
+<%end%>
+<form  action="/" method="get">
+  <div class="ui input focus">
+    <input type="hidden" name="nickname" value="<%= @@g.nickname %>">
+  </div>
+  <input type="submit" class="fluid ui red button" value="Terminar Juego">
+</form>
   </center>
 </body>
 </html>
