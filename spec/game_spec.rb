@@ -61,14 +61,14 @@ describe Game do
   end
 
   it "should return the default nickname" do
-    expect(@g.nickname).to eq("no_name")
+    expect(@g.nickname).to eq(nil)
   end
 
   it "should return the nickname chosed by the player" do
     @g.choseNickname("TheNameChosed")
     expect(@g.nickname).to eq("TheNameChosed")
   end
-  
+
 
   it "should exist records.txt file in public folder" do
     @g.bestScores.createFile()
